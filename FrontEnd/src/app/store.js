@@ -4,7 +4,6 @@ import userReducer from './userSlice';
 import taikhoanReducer from '../features/container/admin/taikhoan/taikhoanSlice'
 import quocgiaReducer from "../features/container/admin/Quocgia/quocgiaSlice"
 import loaitourReducer from "../features/container/admin/Loaitour/loaitourSlice"
-import mangxahoiReducer from "../features/container/admin/mxh/mangxahoiSlice"
 import diadiemReducer from "../features/container/admin/DiaDiem/diadiemSlice"
 import tourReducer from "../features/container/admin/Tour/tourSlice"
 import binhluanReducer from "../features/container/admin/Binhluan/binhluanSlice"
@@ -22,7 +21,6 @@ import userroleReducer from "../features/container/admin/header/userroleSlice"
 import inforReducer from "../features/container/login/inforSlice"
 import chitieuReducer from "../features/container/admin/Doanhthu/chitieuSlice"
 import thanhtoanReducer from "../features/container/detailtour/tour/thanhtoanSlice"
-import chiphiReducer from "../features/container/admin/Chiphi/chiphiSlice"
 import hoadoncanhanReducer from "../features/container/admin/Hoadoncanhan/hoadoncanhanSlice"
 import thongbaoReducer from "../features/container/admin/Kiemduyet/thongbaoSlice"
 const rootReducer = {
@@ -31,7 +29,6 @@ const rootReducer = {
   taikhoan: taikhoanReducer,
   quocgias: quocgiaReducer,
   loaitours: loaitourReducer,
-  mangxahois: mangxahoiReducer,
   diadiems: diadiemReducer,
   tours: tourReducer,
   binhluans: binhluanReducer,
@@ -49,7 +46,6 @@ const rootReducer = {
   chitieu: chitieuReducer,
   khuyenmais: khuyenmaiReducer,
   thanhtoans: thanhtoanReducer,
-  chiphis: chiphiReducer,
   hoadoncanhans: hoadoncanhanReducer,
   thongbao: thongbaoReducer
 }

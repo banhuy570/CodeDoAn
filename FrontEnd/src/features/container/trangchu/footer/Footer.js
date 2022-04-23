@@ -13,15 +13,7 @@ function Footer(props) {
       }
     }
   }
-  const mxhs = useSelector(state => state.mangxahois.mangxahoi.data);
-  const mxh = [];
-  if (footers && mxhs) {
-    for (let i = 0; i < mxhs.length; i++) {
-      if (mxhs[i].status === 1) {
-        mxh.push(mxhs[i])
-      }
-    }
-  }
+
   const chuyentrang = (url) => {
     window.location.href = url;
   }
@@ -82,25 +74,20 @@ function Footer(props) {
             </div>
             <div className="col-md-3 mb-md-0 mb-3 mxh ">
               <h5 className="text-uppercase text-danger ">Mạng xã hội</h5>
-              {mxh.map(ok => (
-                <div key={ok.id} onClick={() => chuyentrang(ok.link)}>
+            
+                <div >
                   <div className="icon_footer" style={{
-                    background: `${ok.color}`,
+                 
                     cursor: "pointer"
                   }}>
-                    <i className={`${ok.icon}`} ></i>
+                    <i >FB</i>
                   </div>
                 </div>
-              ))}
+              
             </div>
           </div>
         </div>
-        <div className="footer-copyright text-center py-3">
-          © 2020 Copyright:
-        <Link to="https://mdbootstrap.com/">
-            Công ty thương mại Vinhtravel.
-       </Link>
-        </div>
+
       </footer>
     </div >
 

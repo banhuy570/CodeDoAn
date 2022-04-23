@@ -58,50 +58,10 @@
     cursor: default;
     color: white;
 }
-.mxh .MuiButton-root{
-    padding-left: 0 !important;
-    width: 45%;
-}
-.mxh .twitter{
-    background-color: rgb(29, 156, 235);
-}
-.mxh .twitter:hover{
-    background-color: rgb(7, 137, 218);
-}
-.mxh .google{
-    background-color: rgb(227, 65, 52);
-}
-.mxh .google:hover{
-    background-color: rgb(226, 46, 33);
-}
-.mxh .instagram{
-    background: #f09433;
-    background: -moz-linear-gradient(
-      45deg,
-      #f09433 0%,
-      #e6683c 25%,
-      #dc2743 50%,
-      #cc2366 75%,
-      #bc1888 100%
-    );
-    background: -webkit-linear-gradient(
-      45deg,
-      #f09433 0%,
-      #e6683c 25%,
-      #dc2743 50%,
-      #cc2366 75%,
-      #bc1888 100%
-    );
-    background: linear-gradient(
-      45deg,
-      #f09433 0%,
-      #e6683c 25%,
-      #dc2743 50%,
-      #cc2366 75%,
-      #bc1888 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
-}
+
+
+
+
 @media (max-width:1125px){
     #dangky .box-login{
         width: 45%;

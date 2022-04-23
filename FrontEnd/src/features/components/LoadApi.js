@@ -3,7 +3,6 @@ import { quocgiaData } from "../container/admin/Quocgia/quocgiaSlice";
 import { tintucData } from "../container/admin/tintuc/tintucSlice";
 import { loaitourData } from "../container/admin/Loaitour/loaitourSlice";
 import { diadiemData } from "../container/admin/DiaDiem/diadiemSlice";
-import { mangxahoiData } from "../container/admin/mxh/mangxahoiSlice";
 import { binhluanData } from "../container/admin/Binhluan/binhluanSlice";
 import { userData } from "../container/admin/taikhoan/taikhoanSlice";
 import { tagData } from "../container/admin/Tag/tagSlice";
@@ -25,7 +24,6 @@ export default function LoadApi() {
     const actionloaitour = async () => { await dispatch(loaitourData()) }
     const actionuser = async () => { await dispatch(userData()) }
     const actiondiadiem = async () => { await dispatch(diadiemData()) }
-    const actionmangxahoi = async () => { await dispatch(mangxahoiData()) }
     const actionbinhluan = async () => { await dispatch(binhluanData()) }
     const actiontag = async () => { await dispatch(tagData()) }
     const actionanh = async () => { await dispatch(anhData()) }
@@ -42,7 +40,6 @@ export default function LoadApi() {
         actionloaitour();
         actionuser();
         actiondiadiem();
-        actionmangxahoi();
         actionbinhluan();
         actiontag();
         actionanh();

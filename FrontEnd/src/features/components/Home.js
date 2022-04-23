@@ -26,7 +26,6 @@ import { quocgiaData } from "../container/admin/Quocgia/quocgiaSlice";
 import { tintucData } from "../container/admin/tintuc/tintucSlice";
 import { loaitourData } from "../container/admin/Loaitour/loaitourSlice";
 import { diadiemData } from "../container/admin/DiaDiem/diadiemSlice";
-import { mangxahoiData } from "../container/admin/mxh/mangxahoiSlice";
 import { binhluanData } from "../container/admin/Binhluan/binhluanSlice";
 // import { userData } from "../container/admin/taikhoan/taikhoanSlice";
 import { tagData } from "../container/admin/Tag/tagSlice";
@@ -39,13 +38,9 @@ import { ngaydiData } from "../container/admin/Ngaydi/ngaydiSlice";
 import { tourData } from "../container/admin/Tour/tourSlice";
 import { camnangdulichData } from "../container/admin/Camnangdulich/camnangdulichSlice";
 import { inforData } from "../container/login/inforSlice";
-import { chiphiData } from "../container/admin/Chiphi/chiphiSlice";
 import CreateTour from "../container/createTour/CreateTour";
 import { thongbaoData } from "../container/admin/Kiemduyet/thongbaoSlice";
 import Thongtin from "../container/trangchu/thongtin/Thongtin";
-import Hotel from "../container/hotels/Hotel";
-import DetailHotel from "../container/hotels/DetailHotel";
-import Contact from "../container/hotels/Contact";
 
 export default function NestingExample() {
   const dispatch = useDispatch();
@@ -65,7 +60,6 @@ export default function NestingExample() {
   const actionloaitour = async () => { await dispatch(loaitourData()) }
 
   const actiondiadiem = async () => { await dispatch(diadiemData()) }
-  const actionmangxahoi = async () => { await dispatch(mangxahoiData()) }
   const actionbinhluan = async () => { await dispatch(binhluanData()) }
   const actiontag = async () => { await dispatch(tagData()) }
   const actionanh = async () => { await dispatch(anhData()) }
@@ -77,7 +71,6 @@ export default function NestingExample() {
   const actiontour = async () => { await dispatch(tourData()) }
   const actioncamnang = async () => { await dispatch(camnangdulichData()) }
   const actioninfor = async () => { await dispatch(inforData()) }
-  const actionchiphi = async () => { await dispatch(chiphiData()) }
   const actionthongbao = async () => { await dispatch(thongbaoData()) }
   useEffect(() => {
 
@@ -96,7 +89,6 @@ export default function NestingExample() {
     actionloaitour();
 
     actiondiadiem();
-    actionmangxahoi();
     actionbinhluan();
     actiontag();
     actionanh();
@@ -108,7 +100,6 @@ export default function NestingExample() {
     actiontour();
     actioncamnang();
     actioninfor();
-    actionchiphi();
     actionthongbao();
     // }
     // );
@@ -169,15 +160,7 @@ export default function NestingExample() {
           <Route path='/stripe'>
             <Stripe />
           </Route>
-          <Route path='/hotels'>
-            <Hotel />
-          </Route>
-          <Route path="/detailhotel/:id">
-            <DetailHotel />
-          </Route>
-          <Route path="/lienhe_khachsan">
-            <Contact />
-          </Route>
+
         </Switch>
       </div>
     </Router>

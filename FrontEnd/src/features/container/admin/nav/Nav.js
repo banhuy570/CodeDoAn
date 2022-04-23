@@ -16,8 +16,6 @@ import Chitietquocgia from "../Quocgia/Chitietquocgia";
 import Themquocgia from "../Quocgia/Themquocgia";
 import Quocgia from "../Quocgia/Quocgia";
 import Themdiadiem from "../DiaDiem/Themdiadiem";
-import Mangxahoi from "../mxh/Mangxahoi";
-import Themmangxahoi from "../mxh/Themmangxahoi";
 import Diadiem from "../DiaDiem/Diadiem";
 import Tour from "../Tour/Tour";
 import Themtour from "../Tour/Themtour";
@@ -40,8 +38,6 @@ import Themcamnang from "../Camnangdulich/Themcamnang";
 import Khuyenmai from "../Khuyenmai/Khuyenmai";
 import Themkhuyenmai from "../Khuyenmai/Themkhuyenmai";
 import { useDispatch, useSelector } from "react-redux";
-import Chiphi from "../Chiphi/Chiphi";
-import Themchiphi from "../Chiphi/Themchiphi";
 import Hoadoncanhan from "../Hoadoncanhan/Hoadoncanhan";
 import Kiemduyet from "../Kiemduyet/Kiemduyet";
 import { hoadoncanhanData } from "../Hoadoncanhan/hoadoncanhanSlice";
@@ -161,15 +157,7 @@ export default function Nav() {
       <Route exact path={match.path}>
         <Doanhthu />
       </Route>
-      <Route exact path={`${match.path}/chiphi`}>
-        <Chiphi url={match.url} />
-      </Route>
-      <Route path={`${match.path}/chiphi/suachiphi/:id`}>
-        <Themchiphi url={match.url} />
-      </Route>
-      <Route exact path={`${match.path}/chiphi/themchiphi`}>
-        <Themchiphi url={match.url} />
-      </Route>
+
       <Route exact path={`${match.path}/kiemduyet`}>
         <Kiemduyet url={match.url} />
       </Route>
@@ -270,9 +258,7 @@ export default function Nav() {
       <Route path={`${match.path}/lienhe/sualienhe/:id`}>
         <Themlienhe />
       </Route>
-      <Route path={`${match.path}/mangxahoi/suamangxahoi/:id`}>
-        <Themmangxahoi />
-      </Route>
+
       <Route path={`${match.path}/tag/suatag/:id`}>
         <Themtag />
       </Route>
@@ -294,9 +280,7 @@ export default function Nav() {
       <Route exact path={`${match.path}/taikhoan`}>
         <Taikhoan url={match.url} />
       </Route>
-      <Route exact path={`${match.path}/mangxahoi`}>
-        <Mangxahoi url={match.url} />
-      </Route>
+ 
       <Route path={`${match.path}/loaitour/themloaitour`}>
         <Themloaitour />
       </Route>
@@ -312,9 +296,7 @@ export default function Nav() {
       <Route path={`${match.path}/tour/suatour/:id`}>
         <Themtour />
       </Route>
-      <Route path={`${match.path}/mangxahoi/themmangxahoi`}>
-        <Themmangxahoi />
-      </Route>
+
     </div>
   );
   const menu_quanlytintuc = (
@@ -451,18 +433,7 @@ export default function Nav() {
       >
         <Link to="/admin">Doanh thu</Link>
       </Menu.Item>
-      <Menu.Item
-        key="19"
-        icon={
-          state.collapsed === true ? (
-            <span className="fas fa-money-check-alt"></span>
-          ) : (
-            <span className="fas fa-money-check-alt mr-2"></span>
-          )
-        }
-      >
-        <Link to={`${match.url}/chiphi`}>Chi phí</Link>
-      </Menu.Item>
+   
       <Menu.Item
         key="21"
         icon={
@@ -537,18 +508,7 @@ export default function Nav() {
       >
         <Link to={`${match.url}/loaitour`}>Quản lý loại tour</Link>
       </Menu.Item>
-      <Menu.Item
-        key="7"
-        icon={
-          state.collapsed === true ? (
-            <span className="fas  fa-share-alt"></span>
-          ) : (
-            <span className="fas  fa-share-alt mr-2"></span>
-          )
-        }
-      >
-        <Link to={`${match.url}/mangxahoi`}>Quản lý mạng xã hội</Link>
-      </Menu.Item>
+   
       <Menu.Item
         key="8"
         icon={

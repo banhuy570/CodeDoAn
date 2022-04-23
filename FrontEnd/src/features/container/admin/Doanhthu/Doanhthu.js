@@ -21,17 +21,11 @@ export default function Doanhthu() {
     const handleOk = () => {
         setIsModalVisible(false);
     };
-    const chiphi = useSelector(state => state.chiphis.chiphi.data);
     const dispatch = useDispatch();
     const actionResult = async () => { await dispatch(userData()) }
 
-    let TongChiPhi = 0;
 
-    if (chiphi) {
-        for (let i = 0; i < chiphi.length; i++) {
-            TongChiPhi += chiphi[i].money;
-        }
-    }
+ 
     const actionChitiet = async () => await dispatch(chitieuData());
     const chitieu = useSelector(state => state.chitieu.chitieu.data);
     useEffect(() => {
@@ -109,7 +103,6 @@ export default function Doanhthu() {
         })
     }
     let thunhap = Number((TongThuNhap / usd).toFixed(0));
-    let chiphitong = Number(((TongChiPhi / usd).toFixed(0)))
     const { chitieunam, chitieuthang, chitieungay } = state
     return (
         <div id="doanhthu">
@@ -127,28 +120,8 @@ export default function Doanhthu() {
                     </div>
                 </div>
 
-                <div className="col-md">
-                    <div className="float-right mr-2">
-                        <div className="icon">
-                            <i className="fas fa-money-bill-alt"></i>
-                        </div>
-                    </div>
-                    <div className="monney float-right">
-                        <span><strong>$ {LoiNhuan((TongChiPhi / usd).toFixed(0), (TongThuNhap / usd).toFixed(0))}</strong></span><br />
-                        <span>Lợi nhuận</span>
-                    </div>
-                </div>
-                <div className="col-md">
-                    <div className="float-left mr-2">
-                        <div className="icon">
-                            <i className="fas fa-chart-pie"></i>
-                        </div>
-                    </div>
-                    <div className="monney">
-                        <span><strong>$ {chiphitong.toLocaleString()}</strong></span><br />
-                        <span>Tổng chi</span>
-                    </div>
-                </div>
+         
+         
                 <div className="col-md">
                     <div className="float-left mr-2">
                         <div className="icon">
