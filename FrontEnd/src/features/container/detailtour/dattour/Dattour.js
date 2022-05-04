@@ -11,7 +11,7 @@ export class Dattour extends Component {
                 <div className="breadcrumb">
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
-                            <li className="breadcrumb-item"><Link to="/"><i className="fas fa-home mr-2"></i>Trang chủ</Link></li>
+                            <li className="breadcrumb-item"><Link to="/#"><i className="fas fa-home mr-2"></i>Trang chủ</Link></li>
                             <li className="breadcrumb-item active" aria-current="page">Đặt tour</li>
                         </ol>
                     </nav>

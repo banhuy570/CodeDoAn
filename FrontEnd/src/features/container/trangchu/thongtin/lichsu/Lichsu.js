@@ -32,6 +32,8 @@ export default function Lichsu() {
                                     </div>
                                     <div className="history--infor">
                                         <table>
+                                        <tbody>
+
                                             <tr>
                                                 <th>Ngày khởi hành &emsp;&emsp;</th>
                                                 <th>{ok.ngaydi}</th>
@@ -44,8 +46,10 @@ export default function Lichsu() {
                                                 <th>Nơi khởi hành</th>
                                                 <th>Đà Nẵng</th>
                                             </tr>
+                                        </tbody>
                                         </table>
                                         <table className="nmn">
+                                        
                                             <tr>
                                                 <th>Số người lớn &emsp;&emsp;</th>
                                                 <th>{ok.nguoilon}</th>

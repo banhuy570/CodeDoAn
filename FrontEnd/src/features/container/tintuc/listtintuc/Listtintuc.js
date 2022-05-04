@@ -42,7 +42,7 @@ export default function Listtintuc() {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link to="/">
+              <Link to="/#">
                 <i className="fas fa-home mr-2"></i>Trang chủ
               </Link>
             </li>

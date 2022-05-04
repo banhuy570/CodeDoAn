@@ -9,12 +9,12 @@ import App from "./App.js"
 // import Stripe from './features/teststripe/Stripe';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <Provider store={store}>
       <Home />
       {/* <App /> */}
     </Provider>
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById('root')
 );
 

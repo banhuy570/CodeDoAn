@@ -44,7 +44,7 @@ function Tintucdetail(props) {
             <div className="breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><Link to="/"><i className="fas fa-home mr-2"></i>Trang chủ</Link></li>
+                        <li className="breadcrumb-item"><Link to="/#"><i className="fas fa-home mr-2"></i>Trang chủ</Link></li>
                         <li className="breadcrumb-item"><Link to="/listtintuc">Tin tức</Link></li>
                         <li className="breadcrumb-item active" aria-current="page">{tintucs ? tintucs.find(x => x.id === +id).name : ''}</li>
                     </ol>

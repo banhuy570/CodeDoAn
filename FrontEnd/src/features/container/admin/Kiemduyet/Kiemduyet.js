@@ -94,15 +94,15 @@ function Kiemduyet() {
                             nxp: <span>{ok.noikhoihanh}</span>,
                             nkh: <span>{ok.ngaykhoihanh}</span>,
                             ddd: <span>{ok.diadiemdi}</span>,
-                            kd: <div className="action"><span onClick={() => { showModal(ok.id, ok.userId) }}><i class="fas fa-check text-danger"></i></span> </div>,
+                            kd: <div className="action"><span onClick={() => { showModal(ok.id, ok.userId) }}><i className="fas fa-check text-danger"></i></span> </div>,
                         }))} />
                 }
                 <Modal title="Duyệt tour" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="">Giá tiền</label>
                         <input type="number" min="0" className="form-control" name="giatien" value={giatien} onChange={handleonchange} id="" aria-describedby="helpId" placeholder="" />
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <label for="">Lưu ý</label>
                         <textarea className="form-control" name="luuy" value={luuy} onChange={handleonchange} id="" max="1000" cols="30" rows="4"></textarea>
                     </div>

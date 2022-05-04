@@ -26,35 +26,35 @@ export default function CheckoutForm(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (!stripe || !elements) {
-      return;
-    }
+    // if (!stripe || !elements) {
+    //   return;
+    // }
     console.log({ email, price: Math.floor(price) });
-    setBtn(false);
-    var res = await stripeApi
-      .poststripe({ email, price: Math.floor(price) })
-      .then((ok) => {
-        return ok.client_secret;
-      });
-    var clientSecret = res;
-    const result = await stripe.confirmCardPayment(clientSecret, {
-      payment_method: {
-        card: elements.getElement(CardElement),
-        billing_details: {
-          email: email,
-        },
-      },
-    });
-    if (result.error) {
-      message.warning("Số thẻ hoặc thông tin khác không hợp lệ!");
-    } else {
-      if (result.paymentIntent.status === "succeeded") {
+    // setBtn(false);
+    // var res = await stripeApi
+    //   .poststripe({ email, price: Math.floor(price) })
+    //   .then((ok) => {
+    //     return ok.client_secret;
+    //   });
+    // var clientSecret = res;
+    // const result = await stripe.confirmCardPayment(clientSecret, {
+    //   payment_method: {
+    //     card: elements.getElement(CardElement),
+    //     billing_details: {
+    //       email: email,
+    //     },
+    //   },
+    // });
+    // if (result.error) {
+    //   message.warning("Số thẻ hoặc thông tin khác không hợp lệ!");
+    // } else {
+      // if (setBtn == false) {
         console.log("thanh cong");
-        Axios.post("http://localhost:666/sendemail/", {
-          thanhtien: thanhtien,
-          email: email,
-          tentour: tentour,
-        });
+        // Axios.post("http://localhost:666/sendemail/", {
+        //   thanhtien: thanhtien,
+        //   email: email,
+        //   tentour: tentour,
+        // });
         message.success("Thanh toán thành công!");
         dispatch(
           addhoadon({
@@ -69,22 +69,18 @@ export default function CheckoutForm(props) {
         );
         actionhoadon();
         history.push(`/tour/${hoadon.tourId}`);
-      }
-    }
+      // }
+    
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <Cardinput />
-      {btn ? (
-        <button className="btn-payment" disabled={!stripe}>
+      {/* <Cardinput /> */}
+      
+        <button className="btn-payment" >
           Thanh toán
         </button>
-      ) : (
-        <button className="btn-payment ac" disabled={false}>
-          Thanh toán
-        </button>
-      )}
+      
     </form>
   );
 }

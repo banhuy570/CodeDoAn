@@ -357,7 +357,7 @@ function Tour(props) {
         <nav aria-label="breadcrumb">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link to="/">
+              <Link to="/#">
                 <i className="fas fa-home mr-2"></i>Trang chủ
               </Link>
             </li>
@@ -384,7 +384,7 @@ function Tour(props) {
                     {tours
                       .find((x) => x.id === +id)
                       .Anhs.map((oki) => (
-                        <div>
+                        <div key={ok.id}>
                           <img
                             src={oki.link}
                             width="760px"
@@ -419,6 +419,7 @@ function Tour(props) {
                     <hr className="hr-tour" />
                     <div className="tt-tour">
                       <table className="w-100">
+                      <tbody>
                         <tr>
                           <td>
                             <span>Khởi hành:</span>
@@ -503,6 +504,7 @@ function Tour(props) {
                             <span>Đà Nẵng</span>
                           </td>
                         </tr>
+                      </tbody>
                       </table>
                     </div>
                     <Button

@@ -185,7 +185,7 @@ function Danhgia(props) {
                             </div>
                             <div>
                                 <form action="" method="post" onSubmit={onSubmit}>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <label for=""></label>
                                         <textarea name="binhluan" value={binhluan} onChange={onChange} id="" cols="30" rows="7" placeholder="Đánh giá của bạn" className="form-control"></textarea>
                                     </div>

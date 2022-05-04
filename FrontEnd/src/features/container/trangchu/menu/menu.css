@@ -65,7 +65,7 @@
   display: block !important;
 }
 a.navbar-brand img {
-  width: 80% !important;
+  width: 120px !important; ;
   /* height: 50% !important; */
 }
 @media (max-width: 768px) {

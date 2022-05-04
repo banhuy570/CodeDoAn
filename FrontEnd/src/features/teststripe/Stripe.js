@@ -42,7 +42,7 @@ function Stripe(props) {
         <div className="thanhtoan">
             {thanhtoan.length === 0 ?
                 <div>
-                    <h2 className="mt-5 text-center">Thanh toán online</h2>
+                    <h2 className="mt-5 text-center">Thanh toán hoá đơn</h2>
                     <div className="container text-center">
                         <h5 className="text-danger">Chưa nhận được thông tin, bạn vui lòng đặt lại tour!</h5>
                         <div className="spin"><Spin /></div>
@@ -50,7 +50,7 @@ function Stripe(props) {
                 </div>
                 :
                 <div>
-                    <h2 className="mt-5 text-center">Thanh toán online</h2>
+                    <h2 className="mt-5 text-center">Thanh toán hóa đơn</h2>
                     <div className="container">
                         <div className="row mt-4">
                             <div className="col-md-6"><div>

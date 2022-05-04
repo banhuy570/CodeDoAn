@@ -303,7 +303,7 @@ function ListMenu(props) {
     <div id="menu">
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
         <Linkrt className="navbar-brand" to="/">
-          <img src={logo} alt="" />
+          <img src={logo} alt="" style={{width:"120px"}} />
         </Linkrt>
         <button
           className="navbar-toggler d-lg-none"
@@ -393,11 +393,11 @@ function ListMenu(props) {
           <Dropdown overlay={sss} trigger={["click"]}>
             {checkthongbao === 0 ? (
               <Badge>
-                <i class="fas fa-bell"></i>
+                <i className="fas fa-bell"></i>
               </Badge>
             ) : (
               <Badge dot>
-                <i class="fas fa-bell"></i>
+                <i className="fas fa-bell"></i>
               </Badge>
             )}
           </Dropdown>

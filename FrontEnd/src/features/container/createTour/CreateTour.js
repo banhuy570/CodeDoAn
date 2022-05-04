@@ -61,7 +61,7 @@ export default function CreateTour() {
             <div className="breadcrumb">
                 <nav aria-label="breadcrumb">
                     <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><Link to="/"><i className="fas fa-home mr-2"></i>Trang chủ</Link></li>
+                        <li className="breadcrumb-item"><Link to="/#"><i className="fas fa-home mr-2"></i>Trang chủ</Link></li>
                         <li className="breadcrumb-item">Tạo tour</li>
                     </ol>
                 </nav>

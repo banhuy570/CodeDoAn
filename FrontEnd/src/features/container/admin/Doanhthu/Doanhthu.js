@@ -193,18 +193,18 @@ export default function Doanhthu() {
                 Đặt chỉ tiêu
             </Button>
             <Modal title="Đặt chỉ tiêu" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel}>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="">Chỉ tiêu ngày</label>
-                    <input type="number" name="chitieungay" value={chitieungay} onChange={onChange} id="" class="form-control" placeholder="" aria-describedby="helpId" />
+                    <input type="number" name="chitieungay" value={chitieungay} onChange={onChange} id="" className="form-control" placeholder="" aria-describedby="helpId" />
                 </div>
 
-                <div class="form-group">
+                <div className="form-group">
                     <label for="">Chỉ tiêu tháng</label>
-                    <input type="number" name="chitieuthang" value={chitieuthang} onChange={onChange} id="" class="form-control" placeholder="" aria-describedby="helpId" />
+                    <input type="number" name="chitieuthang" value={chitieuthang} onChange={onChange} id="" className="form-control" placeholder="" aria-describedby="helpId" />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="">Chỉ tiêu năm</label>
-                    <input type="number" name="chitieunam" value={chitieunam} onChange={onChange} id="" class="form-control" placeholder="" aria-describedby="helpId" />
+                    <input type="number" name="chitieunam" value={chitieunam} onChange={onChange} id="" className="form-control" placeholder="" aria-describedby="helpId" />
                 </div>
             </Modal>
         </div>
