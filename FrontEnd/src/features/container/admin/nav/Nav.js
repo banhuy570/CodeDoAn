@@ -30,8 +30,6 @@ import Themdichvu from "../Dichvu/Themdichvu";
 import Hoadon from "../Hoadon/Hoadon";
 import Role from "../Role/Role";
 import Themrole from "../Role/Themrole";
-import Lienhe from "../Lienhe/Lienhe";
-import Themlienhe from "../Lienhe/Themlienhe";
 import Ngaydi from "..//Ngaydi/Ngaydi";
 import Camnangdulich from "../Camnangdulich/Camnangdulich";
 import Themcamnang from "../Camnangdulich/Themcamnang";
@@ -197,9 +195,6 @@ export default function Nav() {
       <Route exact path={`${match.path}/camnangdulich`}>
         <Camnangdulich url={match.url} />
       </Route>
-      <Route exact path={`${match.path}/lienhe`}>
-        <Lienhe url={match.url} />
-      </Route>
       <Route exact path={`${match.path}/ngaydi`}>
         <Ngaydi />
       </Route>
@@ -228,9 +223,6 @@ export default function Nav() {
       <Route path={`${match.path}/tag/themtag`}>
         <Themtag />
       </Route>
-      <Route path={`${match.path}/lienhe/themlienhe`}>
-        <Themlienhe />
-      </Route>
       <Route path={`${match.path}/role/themrole`}>
         <Themrole />
       </Route>
@@ -255,9 +247,7 @@ export default function Nav() {
       <Route path={`${match.path}/role/suarole/:id`}>
         <Themrole />
       </Route>
-      <Route path={`${match.path}/lienhe/sualienhe/:id`}>
-        <Themlienhe />
-      </Route>
+
 
       <Route path={`${match.path}/tag/suatag/:id`}>
         <Themtag />
@@ -615,8 +605,7 @@ export default function Nav() {
           )
         }
       >
-        <Link to={`${match.url}/lienhe`}>Quản lý liên hệ</Link>
-      </Menu.Item>
+    </Menu.Item>
       <Menu.Item
         key="16"
         icon={

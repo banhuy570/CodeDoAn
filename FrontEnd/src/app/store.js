@@ -13,7 +13,6 @@ import dichvuReducer from "../features/container/admin/Dichvu/dichvuSlice"
 import hoadonReducer from "../features/container/admin/Hoadon/hoadonSlice"
 import tintuctagReducer from "../features/container/admin/tintuc/tintuctagSlice"
 import roleReducer from "../features/container/admin/Role/roleSlice";
-import lienheReducer from "../features/container/admin/Lienhe/lienheSlice"
 import khuyenmaiReducer from "../features/container/admin/Khuyenmai/khuyenmaiSlice"
 import ngaydiReducer from "../features/container/admin/Ngaydi/ngaydiSlice"
 import camnangReducer from "../features/container/admin/Camnangdulich/camnangdulichSlice"
@@ -38,7 +37,6 @@ const rootReducer = {
   hoadons: hoadonReducer,
   tintuctags: tintuctagReducer,
   roles: roleReducer,
-  lienhes: lienheReducer,
   ngaydis: ngaydiReducer,
   camnangdulichs: camnangReducer,
   userroles: userroleReducer,

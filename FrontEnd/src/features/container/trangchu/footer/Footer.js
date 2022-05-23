@@ -4,15 +4,7 @@ import { Link } from "react-router-dom";
 import "./footer.css";
 import fb from "../../../images/Facebook.png"
 function Footer(props) {
-  const footers = useSelector((state) => state.lienhes.lienhe.data);
   const footer = [];
-  if (footers) {
-    for (let i = 0; i < footers.length; i++) {
-      if (footers[i].status === 1) {
-        footer.push(footers[i]);
-      }
-    }
-  }
 
   // const chuyentrang = (url) => {
   //   window.location.href = url;
@@ -22,26 +14,20 @@ function Footer(props) {
       <footer className="page-footer font-small blue pt-4 container">
         <div className="container-fluid text-center text-md-left">
           <div className="row">
-            {footer.map((ok) => (
-              <div className="col-md-6 mt-md-0 mt-3" key={ok.id}>
+              <div className="col-md-6 mt-md-0 mt-3" >
                 <h5 className="text-uppercase text-danger">CÔNG TY CỔ PHẦN DU LỊCH DANANG TRAVEL.</h5>
                 <p>Số 08 Xuân Diệu, Quận Hải Châu, Tp Đà Nẵng</p>
                 <p>Lô 28, Đường Lạc Long Quân, Tp.Hội An</p>
                 <h5 className="text-uppercase text-danger mt-3">Liên hệ</h5>
                 <p>
                   <strong>Email: </strong>
-                  <i>{ok.email}</i>
+                  <i>ngochuy57@gmail.com</i>
                 </p>
                 <p>
                   <strong>Số điện thoại: </strong>
-                  <i>+{ok.sdt}</i>
-                </p>
-                <p>
-                  <strong>Địa chỉ: </strong>
-                  <i>{ok.diachi}</i>
-                </p>
+                  <i>+0123456789</i>
+                </p>        
               </div>
-            ))}
             <hr className="clearfix w-100 d-md-none pb-3" />
             <div className="col-md-3 mb-md-0 mb-3">
               <h5 className="text-uppercase text-danger">Menu</h5>

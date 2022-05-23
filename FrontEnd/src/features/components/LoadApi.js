@@ -10,7 +10,6 @@ import { anhData } from "../container/admin/Anh/anhSlice";
 import { dichvuData } from "../container/admin/Dichvu/dichvuSlice";
 import { hoadonData } from "../container/admin/Hoadon/hoadonSlice";
 import { roleData } from "../container/admin/Role/roleSlice";
-import { lienheData } from "../container/admin/Lienhe/lienheSlice";
 import { ngaydiData } from "../container/admin/Ngaydi/ngaydiSlice";
 import { tourData } from "../container/admin/Tour/tourSlice";
 import { camnangdulichData } from "../container/admin/Camnangdulich/camnangdulichSlice";
@@ -30,7 +29,6 @@ export default function LoadApi() {
     const actiondichvu = async () => { await dispatch(dichvuData()) }
     const actionhoadon = async () => { await dispatch(hoadonData()) }
     const actionrole = async () => { await dispatch(roleData()) }
-    const actionlienhe = async () => { await dispatch(lienheData()) }
     const actionngaydi = async () => { await dispatch(ngaydiData()) }
     const actiontour = async () => { await dispatch(tourData()) }
     const actioncamnang = async () => { await dispatch(camnangdulichData()) }
@@ -46,7 +44,6 @@ export default function LoadApi() {
         actiondichvu();
         actionhoadon();
         actionrole();
-        actionlienhe();
         actionngaydi();
         actiontour();
         actioncamnang();
