@@ -3,6 +3,8 @@ import "./listtintuc.css";
 import { Link } from "react-router-dom";
 import { Spin } from "antd";
 import { useSelector } from "react-redux";
+import Footer from '../../trangchu/footer/Footer';
+
 export default function Listtintuc() {
   const tintucs = useSelector((state) => state.tintucs.tintuc.data);
   var tintuc = [];
@@ -87,6 +89,7 @@ export default function Listtintuc() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

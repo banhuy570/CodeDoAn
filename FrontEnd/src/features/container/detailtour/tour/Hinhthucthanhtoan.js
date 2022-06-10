@@ -17,9 +17,9 @@ export default function Hinhthucthanhtoan(props) {
     return (
         <div>
             <Radio.Group onChange={onChange} value={value}>
-                {/* <Radio style={style} value={1}>Thanh toán trực tiếp</Radio>
-                <Radio style={style} value={2}>Thanh toán phương thức chuyển khoản</Radio> */}
-                <Radio style={style} value={3}>Thanh toán bằng tiền mặt</Radio>
+                <Radio style={style} value={1}>Thanh toán trực tiếp</Radio>
+                {/* <Radio style={style} value={2}>Thanh toán phương thức chuyển khoản</Radio> */}
+                <Radio style={style} value={3}>Thanh toán online</Radio>
             </Radio.Group>
         </div>
     )

@@ -499,7 +499,7 @@ function ListMenu(props) {
               value={name}
               onChange={onChange}
               className="form-control "
-              placeholder=""
+              // placeholder={user.name}
               aria-describedby="helpId"
             />
           </div>

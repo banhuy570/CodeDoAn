@@ -158,6 +158,7 @@ export default function NestingExample() {
             <Stripe />
           </Route>
 
+
         </Switch>
       </div>
     </Router>

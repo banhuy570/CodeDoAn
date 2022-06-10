@@ -583,7 +583,7 @@ export default function Nav() {
       >
         <Link to={`${match.url}/hoadoncanhan`}>Hoá đơn tạo tour</Link>
       </Menu.Item>
-      <Menu.Item
+      {/* <Menu.Item
         key="14"
         icon={
           state.collapsed === true ? (
@@ -594,18 +594,8 @@ export default function Nav() {
         }
       >
         <Link to={`${match.url}/role`}>Quản lý phân quyền</Link>
-      </Menu.Item>
-      <Menu.Item
-        key="15"
-        icon={
-          state.collapsed === true ? (
-            <span className="fas fa-id-card"></span>
-          ) : (
-            <span className="fas fa-id-card mr-2"></span>
-          )
-        }
-      >
-    </Menu.Item>
+      </Menu.Item> */}
+
       <Menu.Item
         key="16"
         icon={

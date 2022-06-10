@@ -1,6 +1,6 @@
 #login{
     height: 100vh;
-    background: url('./../../images/dangnhap1.jpg') center ;
+    background: url('./../../images/dangnhap.jpg') center ;
     background-size: cover;
 }
 #login .box-login{

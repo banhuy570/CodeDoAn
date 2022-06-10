@@ -15,10 +15,10 @@ export class Trangchu extends Component {
     return (
       <div>
         <Banner />
-        <Camnangdulich />
         <CreateTour />
         <Tourtrongnuoc />
         <Tournuocngoai />
+        <Camnangdulich />
         <Dichvu />
         <Tintuc />
         <Ykienkhachhang />

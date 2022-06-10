@@ -6,7 +6,7 @@ import "./card.css"
 import { useSelector } from 'react-redux';
 import Axios from 'axios';
 import { Spin, Tooltip } from 'antd';
-const stripePromise = loadStripe("pk_test_51I0p5CE2oIGbiAkNsd7EJ9VZNaxZXtDMMfkcDD7s5WyP2PXM4hQ6qcSWGwlGtG4DFwWTFTVzr5AAxEaPYiAQBe6Z008USzew3a");
+const stripePromise = loadStripe("pk_test_51Kt7xOJcK2M06qtxb7JzH7cPJGs9X4M61DkvjZwk4Lu36e9pBVv6WXG3ZspMJi7mY1YU7rHoxRx21U8rkoXdxW7R00DixKGFgj");
 function Stripe(props) {
     const [usd, setusd] = useState(23060);
     const [email, setemail] = useState();
@@ -42,7 +42,7 @@ function Stripe(props) {
         <div className="thanhtoan">
             {thanhtoan.length === 0 ?
                 <div>
-                    <h2 className="mt-5 text-center">Thanh toán hoá đơn</h2>
+                    <h2 className="mt-5 text-center">Thanh toán online</h2>
                     <div className="container text-center">
                         <h5 className="text-danger">Chưa nhận được thông tin, bạn vui lòng đặt lại tour!</h5>
                         <div className="spin"><Spin /></div>
@@ -50,7 +50,7 @@ function Stripe(props) {
                 </div>
                 :
                 <div>
-                    <h2 className="mt-5 text-center">Thanh toán hóa đơn</h2>
+                    <h2 className="mt-5 text-center">Thanh toán online</h2>
                     <div className="container">
                         <div className="row mt-4">
                             <div className="col-md-6"><div>

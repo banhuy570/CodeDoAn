@@ -41,7 +41,7 @@ export default function Duyettour() {
             </div>
             <div className="container">
                 <div className="duyettour__content">
-                    {hoadon.length === 0 ? "" :
+                    {hoadon.length === 0 ? "Danh sách trống" :
                         hoadon.map((ok, index) => (
                             <div className="duyettour__box" key={index}>
                                 <div className="duyettour--name">

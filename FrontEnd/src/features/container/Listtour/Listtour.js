@@ -55,6 +55,7 @@ export default function Listtour() {
     if (isNaN(diem)) {
       diem = 0;
     }
+    // console.log(diem)
     return diem;
   };
   var tourtrongnuoc = [];
@@ -185,12 +186,44 @@ export default function Listtour() {
         statenuocngoai: tournuocngoai,
       });
     }
+  
   };
-
+  const searchstar = (value) => {
+    // var danhgiatour=[]; 
+    // if (tours) {
+    //   var sort = [];
+    //   for (let i = 0; i < tours.length; i++) {
+    //     sort.unshift(tours[i]);
+    //   }
+    //   var date = new Date();
+    //   var today =
+    //     date.getFullYear() +
+    //     "-" +
+    //     (date.getMonth() + 1 > 10
+    //       ? date.getMonth() + 1
+    //       : "0" + (date.getMonth() + 1)) +
+    //     "-" +
+    //     (date.getDate() > 10 ? date.getDate() : "0" + date.getDate());
+    //   for (let i = 0; i < sort.length; i++) {
+    //     if (
+    //       sort[i].status === 1 &&
+    //       tinhdiem(i) >= value &&
+    //       maxDate(sort[i].Ngaydis) >= today
+    //     ) {
+    //       console.log(tinhdiem(i));
+    //       danhgiatour.push(sort[i]);
+    //     }
+    //     // console.log(danhgiatour)
+    //   }
+    // }
+  }
   const checkstar = (value) => {
     setstar(value)
-    search()
+    searchstar(value)
   };
+  
+ 
+
   let actives = document.querySelectorAll('li');
   actives.forEach(active => {
       active.addEventListener('click', function () {
@@ -233,7 +266,7 @@ export default function Listtour() {
               <Select.Option value="trong">Tour trong nước</Select.Option>
               <Select.Option value="ngoai">Tour nước ngoài</Select.Option>
             </Select>
-            {state.check === "trong" ? (
+            {/* {state.check === "trong" ? (
               <div>
                 <h4 className="mt-3">Vùng</h4>
                 <Select
@@ -248,7 +281,7 @@ export default function Listtour() {
               </div>
             ) : (
               ""
-            )}
+            )} */}
             <h4 className="mt-3">Đánh giá</h4>
             <div className="star-mid text-primary">
               <ul>

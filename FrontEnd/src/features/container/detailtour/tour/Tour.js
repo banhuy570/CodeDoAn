@@ -244,26 +244,26 @@ function Tour(props) {
       var tourId = id;
       let tongtien = thanhtien(tour_ngay[0].giatreem, tour_ngay[0].giaembe);
       if (stylepayment === 1) {
-        // await dispatch(
-        //     addhoadon({
-        //         thanhtien: tongtien,
-        //         tourId,
-        //         userId,
-        //         nguoilon,
-        //         treem,
-        //         embe,
-        //         ngaydi:
-        //             state.date === ""
-        //                 ? formatlaidate(checkngaydi())
-        //                 : state.date,
-        //     })
-        // );
-        // setState({
-        //     ...state,
-        //     visible2: false,
-        //     visible: false,
-        //     loadlaihoadon: state.loadlaihoadon + 1,
-        // });
+        await dispatch(
+            addhoadon({
+                thanhtien: tongtien,
+                tourId,
+                userId,
+                nguoilon,
+                treem,
+                embe,
+                ngaydi:
+                    state.date === ""
+                        ? formatlaidate(checkngaydi())
+                        : state.date,
+            })
+        );
+        setState({
+            ...state,
+            visible2: false,
+            visible: false,
+            loadlaihoadon: state.loadlaihoadon + 1,
+        });
       } else if (stylepayment === 3) {
         dispatch(
           addthanhtoan({

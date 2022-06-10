@@ -34,25 +34,25 @@ function Footer(props) {
 
               <ul className="list-unstyled">
                 <li>
-                  <Link to="#">
+                  <Link to="/">
                     <span className="fa fa-angle-double-right mr-2"></span>
                     Trang chủ
                   </Link>
                 </li>
                 <li>
-                  <Link to="#">
+                  <Link to="/listtintuc">
                     <span className="fa fa-angle-double-right mr-2"></span>
                     Tin tức
                   </Link>
                 </li>
                 <li>
-                  <Link to="#">
+                  <Link to="/">
                     <span className="fa fa-angle-double-right mr-2"></span>
                     Dịch vụ
                   </Link>
                 </li>
                 <li>
-                  <Link to="#">
+                  <Link to="/">
                     <span className="fa fa-angle-double-right mr-2"></span>
                     Khuyến mãi
                   </Link>
@@ -61,7 +61,6 @@ function Footer(props) {
             </div>
             <div className="col-md-3 mb-md-0 mb-3 mxh ">
               <h5 className="text-uppercase text-danger ">Mạng xã hội</h5>
-
               <div>
                 <div
                   className="icon_footer"
@@ -70,7 +69,6 @@ function Footer(props) {
                   }}
                 >
                   <img src={fb} alt="Facebook" style={{width: "40px"}}></img>
-
                 </div>
                 <div
                   className="icon_footer"

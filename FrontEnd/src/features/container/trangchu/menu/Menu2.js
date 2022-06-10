@@ -118,6 +118,9 @@ function ListMenu(props) {
       <Menu.Item key="2">
         <span onClick={showDrawer}>Xem thông tin</span>
       </Menu.Item>
+      <Menu.Item key="4">
+        <Linkrt to="/thongtin/0">Xem lịch sử</Linkrt>
+      </Menu.Item>
       {users ? (
         phanquyen() ? (
           <Menu.Item key="3">
@@ -275,7 +278,7 @@ function ListMenu(props) {
                   </Linkrt>
                 </div>
               </li>
-       
+
               <li className="nav-item">
                 <div className="border-bot-menu">
                   <Linkrt className="nav-link">Dịch vụ</Linkrt>
@@ -406,7 +409,7 @@ function ListMenu(props) {
                 value={name}
                 onChange={onChange}
                 className="form-control "
-                placeholder=""
+                // placeholder={user.name}
                 aria-describedby="helpId"
               />
             </div>

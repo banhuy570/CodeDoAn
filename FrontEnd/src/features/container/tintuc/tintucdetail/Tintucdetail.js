@@ -83,7 +83,7 @@ function Tintucdetail(props) {
                                         <div className="tags mb-4 font-weight-bold">
                                             <h5>tag:
                                                 {ok.Tags.map(oki => (
-                                                <Link><span className="tag">{oki.name}</span></Link>
+                                                <Link key={ok.id}><span className="tag">{oki.name}</span></Link>
                                             ))}
                                             </h5>
                                         </div>

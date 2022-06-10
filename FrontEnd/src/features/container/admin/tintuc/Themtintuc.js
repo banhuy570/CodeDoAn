@@ -64,7 +64,7 @@ function Themtintuc(props) {
     const onSubmit = async (e) => {
         e.preventDefault();
         setState({ ...state, load: true })
-        if (name.trim() === "" || tenanh.trim() === "" || tacgia.trim() === "" || facebook.trim() === "" || twitch.trim() === "" || instagram.trim() === "" || content.trim() === "" || tomtat.trim() === "") {
+        if (name.trim() === "" || tenanh.trim() === "" || tacgia.trim() === ""  || content.trim() === "" || tomtat.trim() === "") {
             message.error("Xin hãy nhập đầy đủ thông tin!");
         } else {
             if (id) {
