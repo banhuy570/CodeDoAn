@@ -351,6 +351,7 @@ function Tour(props) {
   if (giakhuyenmai) {
     tong = Number(nguoilon) + Number(treem) + Number(embe);
   }
+  
   return (
     <div id="detail-tour">
       <div className="breadcrumb">
@@ -408,7 +409,7 @@ function Tour(props) {
                     </div>
                     <div className="view">
                       <span className="mr-3">
-                        <i className="far fa-thumbs-up mr-1"></i> 200
+                        <i className="fas fa-check-circle mr-1"></i> 200
                       </span>
                       <span>
                         <i className="far fa-comment-dots mr-1"></i>{" "}
@@ -703,6 +704,7 @@ function Tour(props) {
           <strong>Tôi đồng ý với điều khoản ở trên</strong>
         </label>
       </Modal>
+      {/* <Tour dataFromParent={songuoiconlai(ok.songuoi)}/> */}
     </div>
   );
 }

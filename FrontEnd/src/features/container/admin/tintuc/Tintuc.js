@@ -93,7 +93,7 @@ function Tintuc() {
                         name: <Link to={`${match.url}/chitiettintuc/${ok.id}`}>{ok.name}</Link>,
                         author: <span>{ok.tacgia}</span>,
                         anh: <Image src={ok.anh} width="200px" height="150px" alt="" />,
-                        status: <div className="action">{ok.status === 1 ? <Link onClick={() => { handleStatus(ok.status, ok.id) }}><i className="far fa-thumbs-up "></i></Link> : <Link onClick={() => handleStatus(ok.status, ok.id)}><i className="far fa-thumbs-down "></i></Link>}</div>,
+                        status: <div className="action">{ok.status === 1 ? <Link onClick={() => { handleStatus(ok.status, ok.id) }}><i className="fas fa-check-circle "></i></Link> : <Link onClick={() => handleStatus(ok.status, ok.id)}><i className="fas fa-times-circle" style={{color:"red"}}></i></Link>}</div>,
                         action:
                             <div className="action">
                                 <Popconfirm title="Bạn có muốn sửa？" onConfirm={() => { hangdleEdit(ok.id) }} icon={<QuestionCircleOutlined style={{ color: 'green' }} />}>

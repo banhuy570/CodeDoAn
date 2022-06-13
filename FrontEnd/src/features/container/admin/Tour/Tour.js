@@ -1,7 +1,7 @@
 import { QuestionCircleOutlined } from "@ant-design/icons";
 import { Button } from "@material-ui/core";
 import { Image, Popconfirm, Spin, Table } from "antd";
-import React, { useEffect } from "react";
+import React, { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useHistory, useRouteMatch } from "react-router-dom";
 import { ngaydiData } from "../Ngaydi/ngaydiSlice";
@@ -31,6 +31,10 @@ function Tour() {
 
   const columns = [
     {
+      title: "STT",
+      dataIndex: "stt",
+    },
+    {
       title: "Tên tour",
       dataIndex: "name",
     },
@@ -38,6 +42,11 @@ function Tour() {
       title: "Ảnh",
       dataIndex: "anh",
     },
+    {
+      title: "Số lượng ",
+      dataIndex: "songuoi",
+    },
+
     {
       title: "tình trạng",
       dataIndex: "status",
@@ -66,6 +75,8 @@ function Tour() {
       actionResult();
     }, 500);
   };
+
+const [searchInput, setSearchInput]=useState("");
   return (
     <div id="admin">
       <div className="heading">
@@ -73,7 +84,12 @@ function Tour() {
         <div className="hr"></div>
       </div>
       <div className="content">
-        <div className="add">
+        <div className="add" style={{display:"flex",justifyContent: "flex-end",alignItems: "center"}}>
+          <div className="" >
+            <input type="text" className="" placeholder="Tìm kiếm tour..." value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+            <i className="fas fa-search" style={{paddingRight:"20px",paddingLeft:"10px" , fontSize:"1rem"}}></i>            
+          </div>
+          
           <Link to={`${match.url}/themtour`}>
             <Button variant="outlined" color="secondary">
               <i className="fas fa-plus"></i>&nbsp;&nbsp; Thêm mới
@@ -87,14 +103,25 @@ function Tour() {
         ) : (
           <Table
             columns={columns}
-            dataSource={tour.map((ok, index) => ({
+            dataSource={tour.filter((ok)=> {
+              if (searchInput==""){
+              return ok
+              }
+              else if (ok.name.toLowerCase().includes(searchInput.toLowerCase()))
+              {
+                return ok
+              } 
+              }
+            ).map((ok, index) => ({
               key: index + 1,
+              stt:(<p>{index+1}</p>),
               name: (
                 <Link to={`${match.url}/chitiettour/${ok.id}`}>{ok.name}</Link>
               ),
               anh: (
                 <Image src={ok.avatar} width="150px" height="200px" alt="" />
               ),
+              songuoi : (<div>{ok.songuoi}</div>),
               status: (
                 <div className="action">
                   {ok.status === 1 ? (
@@ -103,11 +130,11 @@ function Tour() {
                         handleStatus(ok.status, ok.id);
                       }}
                     >
-                      <i className="far fa-thumbs-up text-primary"></i>
+                      <i className="fas fa-check-circle text-primary"></i>
                     </span>
                   ) : (
                     <span onClick={() => handleStatus(ok.status, ok.id)}>
-                      <i className="far fa-thumbs-down "></i>
+                      <i className="fas fa-times-circle" style={{color:"red"}}></i>
                     </span>
                   )}
                 </div>

@@ -66,7 +66,7 @@ function Hoadoncanhan() {
                             nkh: <span>{ok.ngaykhoihanh}</span>,
                             ddd: <span>{ok.diadiemdi}</span>,
                             tien: <span>{ok.giatien ? (ok.giatien).toLocaleString() + " vnđ" : <span className='text-danger'>Chưa kiểm duyệt</span>}</span>,
-                            kd: <div className="action">{ok.kiemduyet === 1 ? <span ><i className="far fa-thumbs-up text-primary"></i></span> : <span ><i className="far fa-thumbs-down "></i></span>}</div>,
+                            kd: <div className="action">{ok.kiemduyet === 1 ? <span ><i className="fas fa-check-circle text-primary"></i></span> : <span ><i className="fas fa-times-circle" style={{color:"red"}}></i></span>}</div>,
                         }))} />
                 }
             </div>

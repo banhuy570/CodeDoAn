@@ -48,6 +48,10 @@ function Kiemduyet() {
             dataIndex: 'user',
         },
         {
+            title: 'Tên người dùng',
+            dataIndex: 'userName',
+        },
+        {
             title: 'Nơi khởi hành',
             dataIndex: 'nxp',
         },
@@ -88,9 +92,11 @@ function Kiemduyet() {
             <div className="content">
                 {loading ? <div className="spin"><Spin className="mt-5" /></div> :
                     <Table columns={columns} dataSource={hoadoncanhan.map((ok, index) => (
+                        // console.log(ok),
                         {
                             key: index + 1,
                             user: <span>{ok.userId}</span>,
+                            userName: <span>{ok.User.name}</span>,
                             nxp: <span>{ok.noikhoihanh}</span>,
                             nkh: <span>{ok.ngaykhoihanh}</span>,
                             ddd: <span>{ok.diadiemdi}</span>,

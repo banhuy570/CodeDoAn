@@ -36,11 +36,11 @@ function Quocgia() {
         <div className="action">
           {sts === 1 ? (
             <Link>
-              <i className="far fa-thumbs-up "></i>
+              <i className="fas fa-check-circle "></i>
             </Link>
           ) : (
             <Link>
-              <i className="far fa-thumbs-down "></i>
+              <i className="fas fa-times-circle" style={{color:"red"}}></i>
             </Link>
           )}
         </div>
@@ -131,11 +131,11 @@ function Quocgia() {
                         handleStatus(ok.status, ok.id);
                       }}
                     >
-                      <i className="far fa-thumbs-up "></i>
+                      <i className="fas fa-check-circle "></i>
                     </Link>
                   ) : (
                     <Link onClick={() => handleStatus(ok.status, ok.id)}>
-                      <i className="far fa-thumbs-down "></i>
+                      <i className="fas fa-times-circle" style={{color:"red"}}></i>
                     </Link>
                   )}
                 </div>

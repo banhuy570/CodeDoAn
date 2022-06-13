@@ -79,7 +79,7 @@ function Ngaydi() {
                         {
                             key: index + 1,
                             ngay: <span>{ok.ngay}</span>,
-                            status: <div className="action">{ok.status === 1 ? <span onClick={() => { handleStatus(ok.status, ok.id) }}><i className="far fa-thumbs-up text-primary"></i></span> : <span onClick={() => handleStatus(ok.status, ok.id)}><i className="far fa-thumbs-down "></i></span>}</div>,
+                            status: <div className="action">{ok.status === 1 ? <span onClick={() => { handleStatus(ok.status, ok.id) }}><i className="fas fa-check-circle text-primary"></i></span> : <span onClick={() => handleStatus(ok.status, ok.id)}><i className="fas fa-times-circle" style={{color:"red"}}></i></span>}</div>,
                             action:
                                 <div className="action">
                                     <Popconfirm title="Bạn có muốn xoá？" onConfirm={() => { hangdleDelete(ok.id) }} icon={<QuestionCircleOutlined style={{ color: 'red' }} />}>
