@@ -5,8 +5,10 @@ import Search from "antd/lib/input/Search";
 import { Link } from "react-router-dom";
 import Footer from "../trangchu/footer/Footer";
 import "./listtour.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./checkactive.js";
+import { loaitourData } from "../admin/Loaitour/loaitourSlice";
+
 export default function Listtour() {
   const binhluans = useSelector((state) => state.binhluans.binhluan.data);
   const tours = useSelector((state) => state.tours.tour.data);
@@ -14,6 +16,7 @@ export default function Listtour() {
     check: "trong",
     statetrongnuoc: "",
     statenuocngoai: "",
+    checkloaitour:"",
   });
   const [star, setstar] = useState("");
 
@@ -119,8 +122,15 @@ export default function Listtour() {
       check: value,
     });
   };
+  const handleChange1 = (value) => {
+    setState({
+      ...state,
+      checkloaitour: value,
+    });
+    setLoaitour(value);   
+  };
   const search = (e) => {
-    const { check } = state;
+    const { check,checkloaitour } = state;
     if (check === "trong") {
       var tourtrongnuoc = [];
       if (tours) {
@@ -186,52 +196,23 @@ export default function Listtour() {
         statenuocngoai: tournuocngoai,
       });
     }
-  
-  };
-  const searchstar = (value) => {
-    // var danhgiatour=[]; 
-    // if (tours) {
-    //   var sort = [];
-    //   for (let i = 0; i < tours.length; i++) {
-    //     sort.unshift(tours[i]);
-    //   }
-    //   var date = new Date();
-    //   var today =
-    //     date.getFullYear() +
-    //     "-" +
-    //     (date.getMonth() + 1 > 10
-    //       ? date.getMonth() + 1
-    //       : "0" + (date.getMonth() + 1)) +
-    //     "-" +
-    //     (date.getDate() > 10 ? date.getDate() : "0" + date.getDate());
-    //   for (let i = 0; i < sort.length; i++) {
-    //     if (
-    //       sort[i].status === 1 &&
-    //       tinhdiem(i) >= value &&
-    //       maxDate(sort[i].Ngaydis) >= today
-    //     ) {
-    //       console.log(tinhdiem(i));
-    //       danhgiatour.push(sort[i]);
-    //     }
-    //     // console.log(danhgiatour)
-    //   }
-    // }
-  }
-  const checkstar = (value) => {
-    setstar(value)
-    searchstar(value)
-  };
-  
- 
 
-  let actives = document.querySelectorAll('li');
-  actives.forEach(active => {
-      active.addEventListener('click', function () {
-          console.log("ok");
-          actives.forEach(btn => btn.classList.remove('active'));
-          this.classList.add('active');
-      })
-  })
+  };
+
+  const checkstar = (value) => {
+    setstar(value);
+  };
+  const loaitours = useSelector((state) => state.loaitours.loaitour.data);
+  // console.log(loaitours);
+  let actives = document.querySelectorAll("li");
+  actives.forEach((active) => {
+    active.addEventListener("click", function () {
+      console.log("ok");
+      actives.forEach((btn) => btn.classList.remove("active"));
+      this.classList.add("active");
+    });
+  });
+  const [loaitour, setLoaitour] = useState("");
   return (
     <div id="list-tour">
       <div className="breadcrumb">
@@ -255,8 +236,7 @@ export default function Listtour() {
           <div className="col-md-3 border-right pb-3 bg ">
             <h4 className="pt-4">Tìm Kiếm tour</h4>
             <Search placeholder="Tìm kiếm tour" onSearch={search} enterButton />
-
-            <h4 className="mt-3">Loại tour</h4>
+            <h4>Vị trí</h4>
             <Select
               className="w-100"
               defaultValue="trong"
@@ -266,84 +246,27 @@ export default function Listtour() {
               <Select.Option value="trong">Tour trong nước</Select.Option>
               <Select.Option value="ngoai">Tour nước ngoài</Select.Option>
             </Select>
-            {/* {state.check === "trong" ? (
+            {/* {console.log(loaitour)}, */}
+            {loaitours !== undefined ? (
               <div>
-                <h4 className="mt-3">Vùng</h4>
+                <h4 className="mt-3">Loại tour</h4>
                 <Select
                   className="w-100"
-                  defaultValue="trung"
+                  defaultValue="Tất cả"
                   style={{ width: 120 }}
+                  onChange={handleChange1}
                 >
-                  <Select.Option value="bac">Miền Bắc</Select.Option>
-                  <Select.Option value="trung">Miền Trung</Select.Option>
-                  <Select.Option value="nam">Miền Nam</Select.Option>
+                    <Select.Option value ="">Tất cả</Select.Option>
+                  {loaitours.map((ok, index) => (
+                    <Select.Option value={ok.id} key={index}>
+                      {ok.name}
+                    </Select.Option>
+                  ))}
                 </Select>
               </div>
             ) : (
               ""
-            )} */}
-            <h4 className="mt-3">Đánh giá</h4>
-            <div className="star-mid text-primary">
-              <ul>
-                <li className="active">
-                  <span
-                    onClick={() => checkstar(5)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Rate value="5" disabled />
-                    <span className="ml-2">từ 5 sao</span>
-                    <br />
-                  </span>
-                </li>
-                <li>
-                  <span
-                    onClick={() => checkstar(4)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Rate value="4" disabled />
-                    <span className="ml-2">từ 4 sao</span>
-                    <br />
-                  </span>
-                </li>
-                <li>
-                  <span
-                    onClick={() => checkstar(3)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Rate value="3" disabled />
-                    <span className="ml-2">từ 3 sao</span>
-                    <br />
-                  </span>
-                </li>
-                <li>
-                  <span
-                    onClick={() => checkstar(2)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Rate value="2" disabled />
-                    <span className="ml-2">từ 2 sao</span>
-                    <br />
-                  </span>
-                </li>
-                <li>
-                  <span
-                    onClick={() => checkstar(1)}
-                    style={{ cursor: "pointer" }}
-                  >
-                    <Rate value="1" disabled />
-                    <span className="ml-2">từ 1 sao</span>
-                    <br />
-                  </span>
-                </li>
-              </ul>
-            </div>
-            {/* <div className="star-mid text-primary">
-                            <span onClick={() => checkstar(5)} style={{ cursor: "pointer" }}><Rate value="5" disabled /><span className="ml-2">từ 5 sao</span><br /></span>
-                            <span onClick={() => checkstar(4)} style={{ cursor: "pointer" }}><Rate value="4" disabled /><span className="ml-2">từ 4 sao</span><br /></span>
-                            <span onClick={() => checkstar(3)} style={{ cursor: "pointer" }}><Rate value="3" disabled /><span className="ml-2">từ 3 sao</span><br /></span>
-                            <span onClick={() => checkstar(2)} style={{ cursor: "pointer" }}><Rate value="2" disabled /><span className="ml-2">từ 2 sao</span><br /></span>
-                            <span onClick={() => checkstar(1)} style={{ cursor: "pointer" }}><Rate value="1" disabled /><span className="ml-2">từ 1 sao</span><br /></span>
-                        </div> */}
+            )}
           </div>
           <div className="col-md-9">
             <div className="title text-center mt-3">
@@ -359,32 +282,46 @@ export default function Listtour() {
                 <div className="row mt-4 ">
                   {state.check === "trong"
                     ? state.statetrongnuoc === ""
-                      ? tourtrongnuoc.map((ok, index) => (
-                          <div className="col-md-6 mb-3" key={ok.id}>
-                            <Link to={`/tour/${ok.id}`}>
-                              <div className="img rounded">
-                                <img
-                                  src={ok.avatar}
-                                  className="img-fluid"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="content_tour">
-                                <div className="title_tour text-capitalize">
-                                  {ok.name}
+                      ? tourtrongnuoc
+                          .filter(
+                            (ok) => {
+                            if (loaitour === "") {
+                              return ok;
+                            } else {
+                              console.log(ok.Loaitours)
+                              if (ok.Loaitours === loaitour ) {
+                              return ok;
+                              }}
+                          }
+                          )
+                          .map((ok, index) => (
+                            <div className="col-md-6 mb-3" key={ok.id}>
+                            
+                              {console.log(ok)},
+                              <Link to={`/tour/${ok.id}`}>
+                                <div className="img rounded">
+                                  <img
+                                    src={ok.avatar}
+                                    className="img-fluid"
+                                    alt=""
+                                  />
                                 </div>
-                                <div className="star float-left">
-                                  <Rate value={tinhdiem(ok.id)} disabled />
+                                <div className="content_tour">
+                                  <div className="title_tour text-capitalize">
+                                    {ok.name}
+                                  </div>
+                                  <div className="star float-left">
+                                    <Rate value={tinhdiem(ok.id)} disabled />
+                                  </div>
+                                  <div className="money float-left ml-3 text-warning">
+                                    {ok.gianguoilon.toLocaleString()} VNĐ
+                                    <br />
+                                    <del> 4.000.000 VNĐ</del>
+                                  </div>
                                 </div>
-                                <div className="money float-left ml-3 text-warning">
-                                  {ok.gianguoilon.toLocaleString()} VNĐ
-                                  <br />
-                                  <del> 4.000.000 VNĐ</del>
-                                </div>
-                              </div>
-                            </Link>
-                          </div>
-                        ))
+                              </Link>
+                            </div>
+                          ))
                       : state.statetrongnuoc.map((ok, index) => (
                           <div className="col-md-6 mb-3" key={ok.id}>
                             <Link to={`/tour/${ok.id}`}>

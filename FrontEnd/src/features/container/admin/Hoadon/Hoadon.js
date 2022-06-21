@@ -160,6 +160,8 @@ function Hoadon() {
       title: "Ngày đi",
       dataIndex: "date",
       // sorter: (a, b) => new Date(a.date).getTime() > new Date(b.date).getTime() ? 0 : -1 ,
+      ...getColumnSearchProps("date"),
+
     },
     {
       key: "5",

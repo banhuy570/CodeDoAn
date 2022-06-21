@@ -9,6 +9,7 @@ import Ykienkhachhang from "../container/trangchu/ykienkhachhang/ykienkhachhang"
 import Dichvu from "../container/trangchu/dichvu/Dichvu";
 import Footer from "../container/trangchu/footer/Footer";
 import CreateTour from "../container/trangchu/createTour/CreateTour";
+// import MAP from "../container/trangchu/map/Map-home";
 export class Trangchu extends Component {
 
   render() {
@@ -18,11 +19,12 @@ export class Trangchu extends Component {
         <CreateTour />
         <Tourtrongnuoc />
         <Tournuocngoai />
-        <Camnangdulich />
         <Dichvu />
+        <Camnangdulich />
         <Tintuc />
         <Ykienkhachhang />
         <Footer />
+        {/* <MAP/> */}
       </div>
     );
   }

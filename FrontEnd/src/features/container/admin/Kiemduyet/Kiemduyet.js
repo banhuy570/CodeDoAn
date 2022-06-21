@@ -92,7 +92,6 @@ function Kiemduyet() {
             <div className="content">
                 {loading ? <div className="spin"><Spin className="mt-5" /></div> :
                     <Table columns={columns} dataSource={hoadoncanhan.map((ok, index) => (
-                        // console.log(ok),
                         {
                             key: index + 1,
                             user: <span>{ok.userId}</span>,

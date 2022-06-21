@@ -27,9 +27,9 @@ export default function Thongtin() {
                         <TabPane tab="Tour đã đặt" key="1">
                             <Lichsu />
                         </TabPane>
-                        <TabPane tab="Duyệt tour" key="2">
+                        {/* <TabPane tab="Duyệt tour" key="2">
                             <Duyettour />
-                        </TabPane>
+                        </TabPane> */}
                     </Tabs>
                 }
             </div>
